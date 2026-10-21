@@ -11,23 +11,20 @@ export default function Home() {
   return (
     <main className="min-h-screen p-8">
       <div className="mx-auto max-w-3xl space-y-6">
-        <h1 className="text-3xl font-bold">
-          IT Support System
-        </h1>
+        <h1 className="text-3xl font-bold">IT Support System</h1>
         <p className="text-muted-foreground">
           A simple system for reporting and managing
-          internal IT support tickets.</p>
-        <Card>
+          internal IT support</p><Card>
           <CardHeader>
             <CardTitle>Welcome</CardTitle>
-            <CardDescription>Manage IT problems in one place.</CardDescription>
+            <CardDescription>Manage IT problems</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="mb-4">Report problems and keep track of support requests.</p>
-            <Button>View tickets</Button>
+            <p className="mb-4">Check system</p>
+            <Button>click</Button>
           </CardContent>
         </Card>
       </div>
     </main>
-  );
+  )
 }
