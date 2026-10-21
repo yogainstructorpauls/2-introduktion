@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -6,24 +7,41 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { db } from "@/db";
+import { users } from "@/db/schema";
 
-export default function Home() {
+export default async function Home() {
+  const allUsers = await db.select().from(users);
+
   return (
     <main className="min-h-screen p-8">
       <div className="mx-auto max-w-3xl space-y-6">
         <h1 className="text-3xl font-bold">IT Support System</h1>
         <p className="text-muted-foreground">
-          A simple system for reporting and managing
-          internal IT support</p><Card>
+          A simple system for reporting and managing internal IT support
+        </p>
+        <Card>
           <CardHeader>
             <CardTitle>Welcome</CardTitle>
             <CardDescription>Manage IT problems</CardDescription>
           </CardHeader>
           <CardContent>
             <p className="mb-4">Check system</p>
-            <Button>click</Button>
+            <Button>Click</Button>
           </CardContent>
         </Card>
+        <h2 className="text-2xl font-semibold">Users</h2>
+        {allUsers.map((user) => (
+          <Card key={user.id}>
+            <CardHeader>
+              <CardTitle>{user.name}</CardTitle>
+              <CardDescription>{user.email}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>User ID: {user.id}</p>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </main>
   )
