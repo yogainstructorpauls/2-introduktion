@@ -16,7 +16,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen p-8">
       <div className="mx-auto max-w-3xl space-y-6">
-        <h1 className="text-3xl font-bold">IT Support System</h1>
+        <h1 className="text-3xl font-bold">IT support system</h1>
         <Card>
           <CardHeader>
             <CardTitle>Welcome</CardTitle>
@@ -34,7 +34,7 @@ export default async function Home() {
               <CardTitle>{user.name}</CardTitle>
               <CardDescription>{user.email}</CardDescription>
             </CardHeader>
-            <CardContent><p>User ID: {user.id}</p></CardContent>
+            <CardContent><p>User id: {user.id}</p></CardContent>
           </Card>
         ))}
       </div>
